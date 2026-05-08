@@ -1,0 +1,183 @@
+/* src/components/Navbar.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+
+
+:root {
+  --bg: #ece8e3;
+
+  --nav-bg: rgba(244, 241, 236, 0.78);
+
+  --text: #111;
+
+}
+
+body.dark {
+  --bg: #0f1115;
+  --nav-bg: rgba(18, 18, 18, 0.72);
+  --text: #ffffff;
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background: var(--bg);
+  transition: background 0.4s ease;
+}
+
+/* ========================= */
+/* NAVBAR */
+/* ========================= */
+
+.navbar-wrapper {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+
+  padding-top: 14px;
+}
+
+.navbar {
+  width: 97%;
+  max-width: 1700px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 34px;
+
+  border-radius: 18px;
+
+  background: var(--nav-bg);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+
+
+  font-family: "Sora", sans-serif;
+
+  transition: 0.3s ease;
+}
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.logo h1 {
+  font-size: 2rem;
+  font-weight: 750;
+
+  letter-spacing: -1.5px;
+
+  color: var(--text);
+
+  cursor: pointer;
+}
+
+/* ========================= */
+/* LINKS */
+/* ========================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 46px;
+}
+
+.nav-links a {
+  font-size: 1rem;
+  font-weight: 500;
+
+  color: var(--text);
+
+  position: relative;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -5px;
+
+  width: 0%;
+  height: 1.5px;
+
+  background: var(--text);
+
+  transition: 0.35s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ========================= */
+/* ICONS */
+/* ========================= */
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-icons svg {
+  font-size: 1.25rem;
+
+  color: var(--text);
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.nav-icons svg:hover {
+  transform: translateY(-2px);
+}
+
+.theme-icon {
+  padding: 8px;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .navbar {
+    padding: 14px 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    width: 94%;
+    border-radius: 16px;
+  }
+
+  .logo h1 {
+    font-size: 1.6rem;
+  }
+
+  .nav-icons {
+    gap: 16px;
+  }
+}

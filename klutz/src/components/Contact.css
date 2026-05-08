@@ -1,0 +1,344 @@
+/* src/components/Contact.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+
+.contact {
+  width: 100%;
+  min-height: 100vh;
+
+  position: relative;
+  overflow: hidden;
+
+  padding: 140px 40px 100px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.08),
+      transparent 45%
+    ),
+    linear-gradient(
+      to bottom,
+      var(--hero-bg-2),
+      var(--hero-bg-1)
+    );
+
+  font-family: "Sora", sans-serif;
+
+  color: var(--text-main);
+}
+
+/* ========================= */
+/* TOP SECTION */
+/* ========================= */
+
+.contact-top {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto 80px auto;
+
+  display: grid;
+  grid-template-columns: 1fr 320px;
+
+  align-items: end;
+
+  gap: 80px;
+}
+
+.contact-left-heading {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.contact-tag {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 0.68rem;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: var(--text-secondary);
+}
+
+.contact-tag::before {
+  content: "";
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: var(--text-main);
+}
+
+.contact-top h1 {
+  font-size: 5.6rem;
+  font-weight: 850;
+
+  line-height: 0.88;
+
+  letter-spacing: -6px;
+
+  color: var(--text-main);
+
+  max-width: 700px;
+}
+
+.contact-description {
+  font-size: 0.92rem;
+
+  line-height: 1.8;
+
+  color: var(--text-secondary);
+
+  padding-bottom: 16px;
+
+  max-width: 320px;
+}
+
+/* ========================= */
+/* MAIN CONTAINER */
+/* ========================= */
+
+.contact-container {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 260px 1fr;
+
+  gap: 22px;
+
+  align-items: start;
+}
+
+/* ========================= */
+/* INFO CARDS */
+/* ========================= */
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.info-card {
+  padding: 26px;
+
+  border-radius: 28px;
+
+  background: var(--glass-bg);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transition: 0.35s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+}
+
+.info-card span {
+  font-size: 0.68rem;
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+
+  color: var(--text-secondary);
+}
+
+.info-card h3 {
+  margin-top: 12px;
+
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  letter-spacing: -1px;
+
+  color: var(--text-main);
+}
+
+/* ========================= */
+/* FORM */
+/* ========================= */
+
+.contact-form {
+  padding: 34px;
+
+  border-radius: 32px;
+
+  background: var(--glass-bg);
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.input-group label {
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  color: var(--text-secondary);
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+
+  padding: 17px 20px;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(0,0,0,0.06);
+
+  background: rgba(255,255,255,0.5);
+
+  outline: none;
+
+  font-family: "Sora", sans-serif;
+
+  font-size: 0.9rem;
+
+  color: var(--text-main);
+
+  transition: 0.3s ease;
+
+  resize: none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border: 1px solid rgba(0,0,0,0.12);
+
+  transform: translateY(-1px);
+}
+
+body.dark .input-group input,
+body.dark .input-group textarea {
+  background: rgba(255,255,255,0.04);
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  color: white;
+}
+
+.contact-form button {
+  width: fit-content;
+
+  margin-top: 6px;
+
+  padding: 14px 26px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background: var(--button-bg);
+
+  color: var(--button-text);
+
+  font-family: "Sora", sans-serif;
+
+  font-size: 0.84rem;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.35s ease;
+
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.1);
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+}
+
+/* ========================= */
+/* DARK MODE */
+/* ========================= */
+
+body.dark .info-card,
+body.dark .contact-form {
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 1100px) {
+
+  .contact-top {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+
+  .contact-top h1 {
+    font-size: 4rem;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .contact {
+    padding: 120px 20px 80px;
+  }
+
+  .contact-top h1 {
+    font-size: 3rem;
+
+    letter-spacing: -3px;
+  }
+
+  .contact-description {
+    max-width: 100%;
+  }
+
+  .contact-form {
+    padding: 24px;
+  }
+
+  .info-card {
+    padding: 22px;
+  }
+
+  .info-card h3 {
+    font-size: 1.1rem;
+  }
+}

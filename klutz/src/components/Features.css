@@ -1,0 +1,424 @@
+/* src/components/Features.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+
+.feature-showcase {
+  width: 100%;
+  padding: 120px 40px 90px;
+
+  background: var(--hero-bg-1);
+
+  font-family: "Sora", sans-serif;
+
+  overflow: hidden;
+}
+
+/* ========================= */
+/* TOP */
+/* ========================= */
+
+.showcase-top {
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+.showcase-top span {
+  font-size: 0.72rem;
+  font-weight: 600;
+
+  letter-spacing: 4px;
+
+  color: #c8a97e;
+}
+
+.showcase-top h2 {
+  margin-top: 14px;
+
+  font-size: 4rem;
+  font-weight: 800;
+
+  letter-spacing: -4px;
+
+  color: var(--text-main);
+}
+
+/* ========================= */
+/* CONTAINER */
+/* ========================= */
+
+.showcase-container {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 430px 1fr;
+
+  align-items: center;
+
+  gap: 10px;
+
+  position: relative;
+}
+
+/* ========================= */
+/* SIDES */
+/* ========================= */
+
+.showcase-side {
+  display: flex;
+  flex-direction: column;
+
+  gap: 95px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.showcase-side.left {
+  text-align: right;
+}
+
+.showcase-side.right {
+  text-align: left;
+}
+
+.showcase-item {
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  position: relative;
+}
+
+.showcase-side.left .showcase-item {
+  justify-content: flex-end;
+}
+
+.showcase-side.right .showcase-item {
+  justify-content: flex-start;
+}
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+
+.showcase-content {
+  max-width: 270px;
+}
+
+.showcase-content h3 {
+  font-size: 1.18rem;
+  font-weight: 700;
+
+  margin-bottom: 12px;
+
+  color: var(--text-main);
+}
+
+.showcase-content p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+
+  color: var(--text-secondary);
+}
+
+/* ========================= */
+/* CONNECTOR LINES */
+/* ========================= */
+
+.line {
+  width: 170px;
+  height: 1px;
+
+  background: rgba(0, 0, 0, 0.16);
+
+  position: relative;
+
+  flex-shrink: 0;
+}
+
+.line::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: var(--text-main);
+
+  box-shadow: 0 0 0 6px rgba(0,0,0,0.03);
+}
+
+/* LEFT DOT */
+
+.showcase-side.left .line::after {
+  right: -6px;
+}
+
+/* RIGHT DOT */
+
+.showcase-side.right .line::after {
+  left: -6px;
+}
+
+/* ========================= */
+/* CENTER */
+/* ========================= */
+
+.showcase-center {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+}
+
+/* GLOW */
+
+.showcase-glow {
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.75),
+      transparent 70%
+    );
+
+  filter: blur(30px);
+
+  z-index: 1;
+}
+
+/* IMAGE */
+
+.showcase-headphone {
+  width: 100%;
+  max-width: 410px;
+
+  position: relative;
+  z-index: 4;
+
+  animation: floatHeadphone 4s ease-in-out infinite;
+
+  filter:
+    drop-shadow(0 45px 55px rgba(0,0,0,0.14));
+}
+
+/* ========================= */
+/* PREMIUM CARDS */
+/* ========================= */
+
+.premium-cards {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 110px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+.premium-card {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 26px 28px;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.42),
+      rgba(255,255,255,0.12)
+    );
+
+  border: 1px solid rgba(255,255,255,0.16);
+
+  backdrop-filter: blur(14px);
+
+  transition: all 0.35s ease;
+
+  cursor: pointer;
+}
+
+.premium-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 22px 40px rgba(0,0,0,0.08);
+}
+
+.premium-icon {
+  width: 54px;
+  height: 54px;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  color: var(--text-main);
+
+  flex-shrink: 0;
+}
+
+.premium-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+
+  margin-bottom: 6px;
+
+  color: var(--text-main);
+}
+
+.premium-card p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+
+  color: var(--text-secondary);
+}
+
+/* ========================= */
+/* FLOAT */
+/* ========================= */
+
+@keyframes floatHeadphone {
+
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ========================= */
+/* DARK MODE */
+/* ========================= */
+
+body.dark .line {
+  background: rgba(255,255,255,0.14);
+}
+
+body.dark .line::after {
+  background: white;
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.03);
+}
+
+body.dark .showcase-glow {
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.08),
+      transparent 70%
+    );
+}
+
+body.dark .premium-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.05),
+      rgba(255,255,255,0.02)
+    );
+
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+body.dark .premium-icon {
+  background: rgba(255,255,255,0.06);
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 1200px) {
+
+  .showcase-container {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+
+  .showcase-side {
+    gap: 45px;
+  }
+
+  .showcase-side.left,
+  .showcase-side.right {
+    text-align: center;
+  }
+
+  .showcase-item {
+    justify-content: center !important;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .premium-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .feature-showcase {
+    padding: 100px 20px;
+  }
+
+  .showcase-top h2 {
+    font-size: 2.6rem;
+    line-height: 1.05;
+  }
+
+  .showcase-headphone {
+    max-width: 280px;
+  }
+
+  .showcase-content h3 {
+    font-size: 1rem;
+  }
+
+  .showcase-content p {
+    font-size: 0.82rem;
+  }
+
+  .premium-card {
+    padding: 22px;
+  }
+}
